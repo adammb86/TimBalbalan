@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">Tim Balbalan</string>
+
+    <string-array name="club_name">
+        <item>Barcelona FC</item>
+        <item>Real Madrid FC</item>
+        <item>Bayern Munich FC</item>
+        <item>Manchester City FC</item>
+        <item>Manchester United FC</item>
+        <item>Chelsea FC</item>
+        <item>AC Milan FC</item>
+        <item>Arsenal FC</item>
+    </string-array>
+
+    <array name="club_image">
+        <item>@drawable/img_barca</item>
+        <item>@drawable/img_madrid</item>
+        <item>@drawable/img_bayern</item>
+        <item>@drawable/img_city</item>
+        <item>@drawable/img_mu</item>
+        <item>@drawable/img_chelsea</item>
+        <item>@drawable/img_acm</item>
+        <item>@drawable/img_arsenal</item>
+    </array>
+
+    <array name="club_detail">
+        <item>Camp Nou (Catalan pronunciation: , \"new field\", often incorrectly referred to as the
+            \"Nou Camp\" in English) is the home stadium of FC Barcelona since its completion in
+            1957.\r\n\r\nWith a seating capacity of 99,354, it is the largest stadium in Spain and
+            Europe, and the second largest association football stadium in the world in terms of
+            capacity. It has hosted two European Cup/Champions League finals in 1989 and 1999, five
+            matches including the opening game of the 1982 FIFA World Cup and the football
+            competition final at the 1992 Summer Olympics.
+        </item>
+        <item>The Santiago Bernabéu Stadium (Spanish: Estadio Santiago Bernabéu ), is the home
+            stadium of Real Madrid since its completion in 1947, with a current seating capacity of
+            81,044.\r\n\r\nSantiago Bernabéu is one of the world's most famous and prestigious
+            football venues. It has hosted the European Cup/Champions League final on four
+            occasions: in 1957, 1969, 1980 and 2010. The final matches for the 1964 European
+            Nations' Cup and the 1982 FIFA World Cup, were also held at the Bernabéu, thus making it
+            the first stadium in Europe to host both a UEFA European Championship and a FIFA World
+            Cup final.
+        </item>
+        <item>The Allianz Arena is a football stadium in Munich, Bavaria, Germany with a 75,024
+            seating capacity. Widely known for its exterior of inflated ETFE plastic panels, it is
+            the first stadium in the world with a full color-changing color exterior. Located at 25
+            Werner-Heisenberg-Allee at the northern edge of Munich's Schwabing-Freimann borough on
+            the Fröttmaning Heath, it is the third largest arena in Germany behind Signal Iduna Park
+            in Dortmund and the Olympiastadion in Berlin.\r\n\r\nThe two professional Munich
+            football clubs FC Bayern Munich and TSV 1860 München have played their home games at the
+            Allianz Arena since the start of the 2005–06 season. The clubs had previously played
+            their home games at the Munich Olympic Stadium since 1972. TSV 1860 München previously
+            had a 50% share in the stadium but FC Bayern Munich purchased their shares for 11
+            million euros in April, 2006. The arrangement allows TSV 1860 München to play at the
+            stadium while retaining no ownership.\r\n\r\nThe large financial services provider
+            Allianz purchased the naming rights to the stadium for 30 years. However this name
+            cannot be used when hosting FIFA and UEFA events, since these governing bodies have
+            policies forbidding corporate sponsorship from companies that are not official
+            tournament partners. During the 2006 World Cup, the stadium was referred to as FIFA
+            World Cup Stadium Munich. In UEFA club matches, it is known as Fußball Arena München
+            (Football Arena Munich) , and it hosted the 2012 UEFA Champions League Final. The
+            stadium has been nicknamed \"Schlauchboot\" (inflatable boat). The museum of Bayern
+            Munich, FC Bayern Erlebniswelt, is located inside the Allianz Arena.
+        </item>
+        <item>The City of Manchester Stadium in Manchester, England, also known as Etihad Stadium
+            for
+            sponsorship reasons, is the home ground of Manchester City Football Club. For the
+            2014/15 football season, the stadium has a reduced capacity of 45,500 due to expansion
+            work. Capacity will increase to 62,000 from August 2015 making it the second-largest
+            stadium in the Premier League and the ninth-largest in the United Kingdom.\r\n\r\nThe
+            SportCity location, but with a larger stadium, had been proposed for the main athletics
+            arena in Manchester's failed bid for the 2000 Summer Olympics. In the 2002 Commonwealth
+            Games bid, the capacity for the Games was to be 38,000, and after the games it would be
+            converted to be 48,000. The stadium was built by Laing Construction at a cost of £112
+            million and was designed and engineered by ArupSport. The design incorporated a highly
+            complex yet elegant cable-stayed roof structure which is suspended by twelve exterior
+            masts and attached cables.\r\n\r\nTo ensure the long-term future of the stadium after
+            the Commonwealth Games, it was agreed in 1998 that Manchester City F.C. would lease the
+            stadium from Manchester City Council as a replacement for Maine Road. The conversion
+            from a track and field arena to a football stadium cost the city council £22 million and
+            Manchester City £20 million The club moved into its new home during the summer of
+            2003.\r\n\r\nIn addition to athletics, the stadium has hosted the 2008 UEFA Cup Final,
+            England football internationals, rugby league matches, boxing world title fights and
+            music concerts, and will host one 2015 Rugby World Cup match.\r\n\r\nIn March 2014 work
+            commenced on expansion with the south stand roof partially removed over the summer to
+            allow construction to take place. The work is due to be completed by the beginning of
+            the 2015/16 football season with capacity increasing to over 55,000. The expansion will
+            coincide with development immediately adjacent to the stadium and the completion of the
+            Etihad Campus training facility, Connell Sixth Form College and community hub which is
+            partly funded by Manchester City.
+        </item>
+        <item>Old Trafford is a football stadium in Old Trafford, Greater Manchester, England, and
+            the home of Manchester United F.C. With a capacity of 75,635, Old Trafford is the
+            second-largest football stadium in the United Kingdom after Wembley Stadium, and the
+            ninth-largest in Europe. It is about 0.5 miles (800 m) from Old Trafford Cricket Ground
+            and the adjacent tram station.\r\n\r\nOld Trafford, nicknamed the Theatre of Dreams by
+            Bobby Charlton, has been United's home ground since 1910, although from 1941 to 1949, as
+            a result of bomb damage during the Second World War, the club shared Maine Road with
+            local rivals Manchester City. Old Trafford underwent several expansions in the 1990s and
+            2000s, including the addition of extra tiers to the North, West and East Stands, which
+            served to return the ground almost to its original capacity of 80,000. Future expansion
+            is likely to involve the addition of a second tier to the South Stand, which would raise
+            the capacity to over 90,000. The stadium's record attendance was recorded in 1939, when
+            76,962 spectators watched the FA Cup semi-final between Wolverhampton Wanderers and
+            Grimsby Town.\r\n\r\nOld Trafford has hosted FA Cup semi-finals, England fixtures,
+            matches at the 1966 World Cup and Euro 96 and the 2003 Champions League Final, as well
+            as rugby league's annual Super League Grand Final and the final of two Rugby League
+            World Cups. It also hosted football matches at the 2012 Summer Olympics, including
+            women's international football for the first time in its history.
+        </item>
+        <item>Stamford Bridge (/ˈstæm.fərd ˈbrɪdʒ/) is a football stadium located in Fulham, London.
+            It is the home ground of Chelsea F.C.. The stadium is located within the Moore Park
+            Estate also known as Walham Green and is often referred to as simply The Bridge. The
+            capacity is 41,798, making it the eighth largest ground in the Premier
+            League.\r\n\r\nOpened in 1877, the stadium was used by the London Athletic Club until
+            1905, when new owner Gus Mears founded Chelsea Football Club to occupy the ground;
+            Chelsea have played their home games there ever since. It has undergone numerous major
+            changes over the years, most recently in the 1990s when it was renovated into a modern,
+            all-seater stadium.\r\n\r\nStamford Bridge has been used as a venue for England
+            international matches, FA Cup Finals, FA Cup semi-finals and Charity Shield games. It
+            has also hosted numerous other sports, such as cricket, rugby union, speedway, greyhound
+            racing, baseball and American football. The stadium's highest official attendance is
+            82,905, for a league match between Chelsea and Arsenal on 12 October 1935.
+        </item>
+        <item>he Stadio Giuseppe Meazza, commonly known as San Siro, is a football stadium located
+            in the San Siro district in Milan, Italy. It is the home of both A.C. Milan and F.C.
+            Internazionale Milano. On 3 March 1980, the stadium was named in honour of Giuseppe
+            Meazza, the two-time World Cup winner (1934, 1938) who played for Internazionale, and
+            briefly for Milan, in the 1920s, 1930s and 1940s. It held UEFA five-star stadium status
+            which was superseded by a new system of classification.
+        </item>
+        <item>The Emirates Stadium (known as Ashburton Grove prior to sponsorship) is a football
+            stadium in Holloway, London, England, and the home of Arsenal Football Club. With a
+            capacity of 60,272, the Emirates is the third-largest football stadium in England after
+            Wembley and Old Trafford.In 1997, Arsenal explored the possibility of relocating to a
+            new stadium, having been denied planning permission by Islington Council to expand its
+            home ground of Highbury. After considering various options (including purchasing
+            Wembley), the club bought an industrial and waste disposal estate in Ashburton Grove in
+            2000. A year later they won the council's approval to build a stadium on the site;
+            manager Arsène Wenger described this as the \"biggest decision in Arsenal's history\"
+            since the board appointed Herbert Chapman. Relocation began in 2002, but financial
+            difficulties delayed work until February 2004. Emirates Airline was later announced as
+            the main sponsor for the stadium. Work was completed in 2006 at a cost of £390 million.
+        </item>
+    </array>
+</resources>
