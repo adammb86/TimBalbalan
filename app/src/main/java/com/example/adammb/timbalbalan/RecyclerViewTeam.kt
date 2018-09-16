@@ -2,40 +2,47 @@ package com.example.adammb.timbalbalan
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.adammb.timbalbalan.TeamList.Team
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.item_team.view.*
+import org.jetbrains.anko.*
 
-class RecyclerViewTeam(private val context: Context, private val teams: List<Team>, private val listener: (Team) -> Unit)
+class RecyclerViewTeam(private val context: Context,
+                       private val teams: List<Team>,
+                       private val listener: (Team) -> Unit)
     : RecyclerView.Adapter<RecyclerViewTeam.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val imageLogoTeamId = 1
-        val imageNameTeamId = 2
 
-        ImageView(){
+    companion object {
+        val logoTeamId = 1
+        val nameTeamId = 2
+    }
 
-            id = imageLogoTeamId
+    class RecyclerViewTeamUI : AnkoComponent<ViewGroup> {
+        override fun createView(ui: AnkoContext<ViewGroup>) = with(ui) {
+            linearLayout {
+                horizontalPadding = dip(16)
+                verticalPadding = dip(8)
+
+                imageView {
+                    id = logoTeamId
+                }.lparams(width = dip(50), height = dip(50))
+
+                textView {
+                    id = nameTeamId
+                }.lparams {
+                    gravity = Gravity.CENTER_VERTICAL
+                    horizontalMargin = dip(16)
+                }
+            }
         }
+    }
 
-        <ImageView
-        android:id = "@+id/team_logo"
-        android:layout_width = "50dp"
-        android:layout_height = "50dp"
-        android:src = "@drawable/img_barca" />
-
-        <TextView
-        android:id = "@+id/team_name"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_gravity = "center_vertical"
-        android:layout_margin = "10dp"
-        tools:text = "Barcelona FC" />
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(RecyclerViewTeamUI().createView(AnkoContext.create(parent.context, parent)))
     }
 
     override fun getItemCount(): Int = teams.size
@@ -44,16 +51,18 @@ class RecyclerViewTeam(private val context: Context, private val teams: List<Tea
         holder.bindItem(teams[position], listener)
     }
 
-    class ViewHolder(containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
-        override val containerView: View?
-            get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val textViewTeamName = itemView.findViewById<TextView>(RecyclerViewTeam.nameTeamId)
+        val imageViewTeamLogo = itemView.findViewById<ImageView>(RecyclerViewTeam.logoTeamId)
 
-        fun bindItem(teams: Team, listener: (Team) -> Unit) {
-            itemView.team_name.text = teams.teamName
-            Glide.with(itemView.context).load(teams.teamLogo).into(itemView.team_logo)
+        fun bindItem(team: Team, listener: (Team) -> Unit) {
+            textViewTeamName.text = team.teamName
+            Glide.with(itemView.context)
+                    .load(team.teamLogo)
+                    .into(imageViewTeamLogo)
 
             itemView.setOnClickListener {
-                listener(teams)
+                listener(team)
             }
         }
     }

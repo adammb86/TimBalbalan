@@ -1,42 +1,51 @@
 package com.example.adammb.timbalbalan.TeamDetail
 
-import android.support.v7.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
-import com.example.adammb.timbalbalan.R
-import com.example.adammb.timbalbalan.TeamList.Team
-import kotlinx.android.synthetic.main.abc_activity_chooser_view.view.*
+import android.support.v7.app.AppCompatActivity
+import android.view.Gravity
 import org.jetbrains.anko.*
 
 class TeamDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_team_detail)
 
-        initData()
+        val teamName: String = intent.extras.getString("teamName")
+        val teamLogo = intent.extras.getInt("teamLogo")
+        val teamInfo = intent.extras.getString("teamInfo")
+
+        TeamDetailActivityUI(teamName, teamLogo, teamInfo).setContentView(this)
     }
 
-    private fun initData() {
-        val name = resources.getStringArray(R.array.club_name)
-        val image = resources.obtainTypedArray(R.array.club_image)
-        val info = resources.getStringArray(R.array.club_detail)
-        teams.clear()
-
-        for (i in name.indices) {
-            teams.add(Team(name[i], image.getResourceId(i, 0), info[i]))
-        }
-
-        image.recycle()
-    }
-
-    class TeamDetailActivity : AnkoContext<TeamDetailActivity>{
+    class TeamDetailActivityUI(val teamName: String, val teamLogo: Int, val teamInfo: String) :
+            AnkoComponent<TeamDetailActivity> {
         override fun createView(ui: AnkoContext<TeamDetailActivity>) = with(ui) {
-            verticalLayout(){
+            verticalLayout {
                 padding = dip(16)
+                gravity = Gravity.CENTER_HORIZONTAL
 
-                imageView(){
-                    setImageResource()
+                imageView {
+                    imageResource = teamLogo
+                }.lparams(width = matchParent, height = dip(100)) {
+                    verticalMargin = dip(8)
                 }
+
+                textView(teamName) {
+                    textSize = sp(12).toFloat()
+                    textColor = Color.BLACK
+                    gravity = Gravity.CENTER_HORIZONTAL
+                }
+
+                scrollView {
+
+
+                    textView(teamInfo) {
+                        textSize = sp(8).toFloat()
+                    }.lparams {
+                        verticalMargin = dip(16)
+                    }
+                }.lparams(width = matchParent, height = wrapContent)
             }
         }
     }
