@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.adammb.timbalbalan.TeamList.Team
 import org.jetbrains.anko.*
 
@@ -41,9 +42,8 @@ class RecyclerViewTeam(private val context: Context,
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(RecyclerViewTeamUI().createView(AnkoContext.create(parent.context, parent)))
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+            ViewHolder(RecyclerViewTeamUI().createView(AnkoContext.create(parent.context, parent)))
 
     override fun getItemCount(): Int = teams.size
 
@@ -59,6 +59,7 @@ class RecyclerViewTeam(private val context: Context,
             textViewTeamName.text = team.teamName
             Glide.with(itemView.context)
                     .load(team.teamLogo)
+                    .apply(RequestOptions().override(100, 100))
                     .into(imageViewTeamLogo)
 
             itemView.setOnClickListener {

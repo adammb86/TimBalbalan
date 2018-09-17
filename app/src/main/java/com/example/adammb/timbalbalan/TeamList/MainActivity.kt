@@ -18,25 +18,23 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         initData()
 
         val adapter = RecyclerViewTeam(this, teams) { team ->
-            startActivity<TeamDetailActivity>("teamName" to team.teamName,
-                    "teamLogo" to team.teamLogo,
-                    "teamInfo" to team.teamInfo)
+            startActivity<TeamDetailActivity>("team" to team)
         }
+
         MainActivityUI(adapter).setContentView(this)
     }
 
-    class MainActivityUI(val recyclerViewTeam: RecyclerViewTeam) : AnkoComponent<MainActivity> {
+    class MainActivityUI(val recylerViewAdapter: RecyclerViewTeam) : AnkoComponent<MainActivity> {
         override fun createView(ui: AnkoContext<MainActivity>) = with(ui) {
             verticalLayout {
                 recyclerView {
                     id = listTeamId
                     layoutManager = LinearLayoutManager(context)
-                    adapter = recyclerViewTeam
+                    adapter = recylerViewAdapter
                 }.lparams(width = matchParent, height = matchParent)
             }
         }
@@ -54,5 +52,4 @@ class MainActivity : AppCompatActivity() {
 
         image.recycle()
     }
-
 }

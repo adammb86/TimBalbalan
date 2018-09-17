@@ -4,6 +4,9 @@ import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.example.adammb.timbalbalan.TeamList.Team
 import org.jetbrains.anko.*
 
 class TeamDetailActivity : AppCompatActivity() {
@@ -11,36 +14,34 @@ class TeamDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val teamName: String = intent.extras.getString("teamName")
-        val teamLogo = intent.extras.getInt("teamLogo")
-        val teamInfo = intent.extras.getString("teamInfo")
+        val team = intent.extras.getParcelable<Team>("team")
 
-        TeamDetailActivityUI(teamName, teamLogo, teamInfo).setContentView(this)
+        TeamDetailActivityUI(team).setContentView(this)
     }
 
-    class TeamDetailActivityUI(val teamName: String, val teamLogo: Int, val teamInfo: String) :
-            AnkoComponent<TeamDetailActivity> {
+    class TeamDetailActivityUI(val team: Team) : AnkoComponent<TeamDetailActivity> {
         override fun createView(ui: AnkoContext<TeamDetailActivity>) = with(ui) {
             verticalLayout {
                 padding = dip(16)
                 gravity = Gravity.CENTER_HORIZONTAL
 
                 imageView {
-                    imageResource = teamLogo
+                    Glide.with(context)
+                            .load(team.teamLogo)
+                            .apply(RequestOptions().override(100, 100))
+                            .into(this)
                 }.lparams(width = matchParent, height = dip(100)) {
                     verticalMargin = dip(8)
                 }
 
-                textView(teamName) {
+                textView(team.teamName) {
                     textSize = sp(12).toFloat()
                     textColor = Color.BLACK
                     gravity = Gravity.CENTER_HORIZONTAL
                 }
 
                 scrollView {
-
-
-                    textView(teamInfo) {
+                    textView(team.teamInfo) {
                         textSize = sp(8).toFloat()
                     }.lparams {
                         verticalMargin = dip(16)
@@ -50,3 +51,4 @@ class TeamDetailActivity : AppCompatActivity() {
         }
     }
 }
+
