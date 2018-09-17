@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.example.adammb.timbalbalan.R
-import com.example.adammb.timbalbalan.RecyclerViewTeam
+import com.example.adammb.timbalbalan.RecyclerViewTeamAdapter
 import com.example.adammb.timbalbalan.TeamDetail.TeamDetailActivity
+import com.example.adammb.timbalbalan.TeamDetail.TeamDetailActivity.Companion.EXTRA_TEAM
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 
@@ -21,14 +22,14 @@ class MainActivity : AppCompatActivity() {
 
         initData()
 
-        val adapter = RecyclerViewTeam(this, teams) { team ->
-            startActivity<TeamDetailActivity>("team" to team)
+        val adapter = RecyclerViewTeamAdapter(this, teams) { team ->
+            startActivity<TeamDetailActivity>(EXTRA_TEAM to team)
         }
 
         MainActivityUI(adapter).setContentView(this)
     }
 
-    class MainActivityUI(val recylerViewAdapter: RecyclerViewTeam) : AnkoComponent<MainActivity> {
+    class MainActivityUI(val recylerViewAdapter: RecyclerViewTeamAdapter) : AnkoComponent<MainActivity> {
         override fun createView(ui: AnkoContext<MainActivity>) = with(ui) {
             verticalLayout {
                 recyclerView {

@@ -11,10 +11,15 @@ import org.jetbrains.anko.*
 
 class TeamDetailActivity : AppCompatActivity() {
 
+    //Membuat companion object di TeamDetailActivity
+    companion object {
+        val EXTRA_TEAM = "team"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val team = intent.extras.getParcelable<Team>("team")
+        val team = intent.extras.getParcelable<Team>(EXTRA_TEAM)
 
         TeamDetailActivityUI(team).setContentView(this)
     }

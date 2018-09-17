@@ -12,10 +12,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.adammb.timbalbalan.TeamList.Team
 import org.jetbrains.anko.*
 
-class RecyclerViewTeam(private val context: Context,
-                       private val teams: List<Team>,
-                       private val listener: (Team) -> Unit)
-    : RecyclerView.Adapter<RecyclerViewTeam.ViewHolder>() {
+class RecyclerViewTeamAdapter(private val context: Context,
+                              private val teams: List<Team>,
+                              private val listener: (Team) -> Unit)
+    : RecyclerView.Adapter<RecyclerViewTeamAdapter.ViewHolder>() {
 
     companion object {
         val logoTeamId = 1
@@ -52,8 +52,8 @@ class RecyclerViewTeam(private val context: Context,
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textViewTeamName = itemView.findViewById<TextView>(RecyclerViewTeam.nameTeamId)
-        val imageViewTeamLogo = itemView.findViewById<ImageView>(RecyclerViewTeam.logoTeamId)
+        val textViewTeamName = itemView.findViewById<TextView>(RecyclerViewTeamAdapter.nameTeamId)
+        val imageViewTeamLogo = itemView.findViewById<ImageView>(RecyclerViewTeamAdapter.logoTeamId)
 
         fun bindItem(team: Team, listener: (Team) -> Unit) {
             textViewTeamName.text = team.teamName
